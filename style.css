@@ -1,0 +1,88 @@
+/*
+Theme Name: Site WordPress
+Version: 1.0
+Author: Elisabeth ROBERT AOUCHER
+*/
+
+:root{
+    --valeurViewport:100vw;
+
+    --PremiereCouleurTexte:#ffffff;
+    --deuxiemeCouleurTexte:#4D4D4D;
+
+    --variableLargeur:1920;
+    --fontSiza20px:calc(20 * var(--valeurViewport) / var(--variableLargeur));
+
+    --premiereFontFamily:'Asap', sans-serif;
+}
+
+*{
+    margin:0;   
+    padding:0;
+    box-sizing:border-box;
+}
+
+nav{
+    height:calc(100 * var(--valeurViewport) / 1920) ;
+    width:100%;
+    position:sticky;
+    top:0;
+    left:0;
+    z-index:6;
+    background-color: var(--PremiereCouleurTexte);
+}
+
+nav ul{
+    display:flex;
+    align-items:center;
+    height:100%;  
+}
+
+nav ul li{
+    list-style-type: none;
+}
+
+nav ul li:nth-child(2){
+    margin-left:auto;
+}
+
+nav ul li svg{
+    width:calc(65 * 100vw / 1920);
+    height:auto;
+}
+
+nav ul li:not(li:nth-child(7)) {
+    padding-right:calc(45 / var(--variableLargeur) * 100%) ;
+}  
+
+nav ul li a{
+    font-size:var(--fontSiza20px);
+    text-decoration:none;
+    color:var(--deuxiemeCouleurTexte);
+    text-transform:uppercase;
+    line-height:100px;
+    font-family:var(--premiereFontFamily);
+    width:clamp(calc(1048 / var(--variableLargeur) * 100%));
+    white-space : nowrap;
+    position:relative;
+}
+
+nav ul li a:before{
+    content:"";
+    position:absolute;
+    top:0 ;
+    left:0%;
+    width:0%;
+    height:100%;
+    border-bottom:2px solid var(--deuxiemeCouleurTexte);
+    transition:width 0.5s; 
+}
+
+nav ul li a:hover:before{
+    left:0;
+    width:100%;  
+}
+
+ul {
+    padding-left:calc(80 / var(--variableLargeur) * 100%);
+} 
